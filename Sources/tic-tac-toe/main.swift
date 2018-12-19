@@ -31,11 +31,16 @@ class Game {
     }
 
     func declareWinner(_ play: Play) {
-        print("Player \(play.rawValue) won! 🎉")
+        print("Player \(play.rawValue) won! 🏆")
         exit(0)
     }
 
     func play() {
+        print("Game started! 🎉\n")
+        board.printBoard()
+        print("Player X has the first move.\n")
+        print("Coordinates are specified in the format: x y, where x and y are values between 0 and 2.")
+        print("For example, 0 0 is the top-left corner. 2 1 is the middle right square.")
         while gameActive {
             guard let move = readLine(strippingNewline: true) else {
                 print("Input your move.")
@@ -63,15 +68,6 @@ class Game {
         }
     }
 
-//    play(): begins a new game.
-//    playRound(row, col): executes a single round of the game by placing a piece at the position of row, col.
-//    printCurrentPlayersTurn(): prints who's turn it is.
-//    decrementRounds(): reduces the number of rounds remaining.
-//    delcareWinner(player): declares the given player as the winner.
-//    declareTie(): declares a tie.
-//    printInvalidMove(): declares a move invalid.
-//    printCurrentMove(row, col): prints the move just made.
-//    switchPlayer(): changes current player.
 }
 
 class Board {
@@ -140,6 +136,7 @@ class Board {
         case .o:
             activePlayer = .x
         }
+        print("It's your turn Player \(activePlayer.rawValue)!")
     }
 
     @discardableResult
@@ -235,8 +232,6 @@ class Board {
         return false
     }
 }
-
-print("Game started!\n")
 
 let game = Game()
 game.play()
