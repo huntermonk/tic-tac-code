@@ -1,3 +1,3 @@
-# tic-tac-toe
+# Tic-Tac-Code
 
-A description of this package.
+A beautiful tic-tac-toe game on the command line, entirely written in Swift in 1.5 hours.
